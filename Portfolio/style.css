@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.content { 
+    box-sizing: border-box; 
+    overflow: auto; 
+     
+}
+
+.logo {
+    font-size: 25px;
+    color: #031540;
+    text-decoration: none;
+    font-weight: 800;
+
+}
+
+.logo-img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: #00abf0;
+    
+}
+a:hover{
+    color: #00abf0;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color:#00abf0(181, 181, 181);
+}
+
+.home {
+    height: 100vh;
+    background: linear-gradient(-90deg, #031540 65%, #fff 35%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+
+}
+
+.home-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background: #031540;
+    border-radius: 50%;
+    border: 25px solid #fff;
+    outline: 25px solid #031540;
+
+}
+
+.home-image img {
+    position: relative;
+    bottom: 100px;
+    max-width: 350px;
+    top: 2px;
+    height: 80%;
+    box-shadow: 0 0 8px 8px white inset;
+    
+    
+}
+.home-content{
+    max-width: 600px;
+    color: #fff;
+    text-align: right;
+}
+
+.home-content h1{
+    font-size: 55px;
+    line-height: 1.2;
+}
+.home-content h2{
+    font-size: 45px;
+    line-height: 1.1;
+}
+
+.home-content h3{
+    font-size: 30px;
+    color: transparent;
+    -webkit-text-stroke: .5px #fff;
+    background-image: linear-gradient(#00abf0, #00abf0);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -410px 0;
+    animation: animateText 6s linear infinite;
+}
+
+@keyframes animateText {
+    0%,
+    95%,
+    100%{
+        background-position: -410px 0;
+    }
+    65%, 85%{
+        background-position: 0 0;
+    }
+}
+
+.home-content p{
+    font-size: 16px;
+    margin-top: 20px;
+
+
+}
+
+.home-sci{
+    margin: 25px 0 40px;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background:transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    margin-left: 12px;
+    transition: .5s;
+
+}
+
+.home-sci a:hover{
+    background: #00abf0;
+    color: #fff;
+    border-color: #00abf0;
+    box-shadow: 0 0 10px #00abf0 ;
+}
+
+.btn {
+    padding: 12px 35px;
+    background: #00abf0;
+    border-radius: 40px;
+    font-size: 17px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px #00abf0;
+    transition: .5s;
+}
+
+.btn:hover {
+    box-shadow: none;
+}
+
+
+/*--about section---*/
+#about {
+    padding: 40px 0;
+    color:  #fff;
+    width: 100%;
+    line-height: 1.5;
+    background: linear-gradient(-90deg, #031540 65%, #fff 35%);
+    
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center; 
+}
+
+.about-col-1{
+    flex-basis: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+
+.about-col-2{
+    flex-basis: 60%;
+    
+}
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+   
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+    
+}
+
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    color:  #fff;
+}
+
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #00abf0;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.tab-contents ul li span{
+    color: #00abf0;
+    font-size:  14px;
+}
+
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+  
+
+/*-----------My WORK-------------*/
+/* PROJECTS SECTION */
+
+#projects {
+    
+    position: relative;
+    text-align: center; /* Center-align the text */
+    background: #031540; /* Set the background color to dark blue */
+    color: #00abf0; /* Set text color to white or any preferred color */
+    margin-bottom: 20px;
+}
+.browse-recent {
+    color: #fff; /* White color */
+}
+
+  
+  .section__text {
+    margin: 2rem 0; /* Add some space between title and description */
+  }
+
+  .experience-details-container {
+    display: flex; /* Make the project containers display in a horizontal line */
+    justify-content: space-around; /* Space projects evenly along the line */
+    flex-wrap: nowrap; /* Prevent wrapping to maintain horizontal layout */
+    margin-top: 2rem; /* Add space above the project containers */
+  }
+  
+  .project-container {
+    position: relative; /* Set the position to relative */
+    z-index: 1; /* Ensure project containers appear above other elements */
+    flex: 0 0 auto; /* Prevent project containers from stretching */
+    display: flex;
+    justify-content: center; /* Center-align the project containers */
+    margin: 0 10px; /* Add space between project sections */
+    margin-bottom: 20px; /* Add margin at the bottom to separate containers from the background */
+  }
+  
+  .color-container {
+    border: 1px solid rgb(163, 163, 163); /* Use 'border' instead of 'border-color' */
+    background: rgb(250, 250, 250);
+    padding: 20px; /* Add some padding to the container */
+    border-radius: 10px; /* Add border radius for a rounded appearance */
+    text-align: center; /* Center-align the content within each project container */
+  }
+  
+  .project-img {
+    max-width: 100%; /* Make images responsive and not too large */
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  .project-title {
+    margin: 1rem 0; /* Add space above and below the title */
+    color: black;
+  }
+  
+  .project-btn {
+    color: black;
+    border: 1px solid rgb(163, 163, 163); /* Use 'border' instead of 'border-color' */
+    margin: 10px; /* Add space between buttons */
+  }
+
+  .white-background {
+    background: #fff; /* Set the background color to white */
+    color: #000; /* Set text color to black or any preferred color */
+  }
+  
+  
+/*--------contact section-----*/
+#contact{
+    line-height: 1.5;
+    background: linear-gradient(-90deg, #031540 65%, #fff 35% );
+    
+   
+    
+}
+
+.contact-left{
+    flex-basis: 35%;
+    text-align: center; /* Center-align content on mobile screens */
+    background: #fff; /* White background for the left side */
+    padding: 20px; /* Add some padding for spacing */
+    
+   
+}
+
+.highlight{
+    background-color: yellow;
+    font-weight: bold;
+}
+.sub-title {   
+    color: #00abf0;   
+    font-size: 36px;   
+    text-align: center;   
+    margin-top: 20px; }
+
+.container { 
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    
+    
+}
+
+.contact-left h4 { 
+    font-size: 24px; 
+}
+
+.contact-right{
+    flex-basis: 60%;
+    position: relative; 
+    text-align: center; /* Center-align content on mobile screens */
+    background: #031540; /* Dark blue background for the right side */
+    padding: 20px; /* Add some padding for spacing */
+    
+    
+   
+}
+
+.contact-left p{
+    margin-top: 30px;
+
+}
+
+.contact-left p i{
+    color: #00abf0;
+    margin-right: 15px;
+    font-size: 25px;
+    
+    
+}
+
+
+.btn.btn2{
+    display: inline-block;
+    background: #00abf0;
+    display: block; 
+    margin: 10px auto;
+    
+    
+}
+
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 60%;
+    border: 0;
+    outline: none;
+    background: #BEBEBE;
+    padding: 10px;
+    margin: 10px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+/* FOOTER SECTION */
+
+footer {
+    background-color: black; /* Light blue background color */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer .nav-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer .nav-links li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  footer .nav-links li a {
+    color: #00bfff; /* Light blue color for links */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  footer p {
+    color: white; /* White color for the copyright text */
+    margin: 0;
+  }
+  
+
+/* ... Your existing CSS code ... */
+
+/* Hide the checkbox input */
+#menu-toggle {
+    display: none;
+}
+
+/* Style the menu icon label */
+#menu-icon {
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 101; /* Ensure the menu icon is above other content */
+    color: #fff; /* Change the color of the menu icon */
+}
+
+#close-icon {
+    /* Your styling for the close icon */
+    display: none; /* Hide the close icon initially */
+    color: #fff; /* Change the color of the close icon */
+}
+
+/* Style the menu when the checkbox is checked */
+#menu-toggle:checked + .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Add a semi-transparent background */
+    z-index: 100;
+}
+
+/* Style the navigation links inside the menu */
+#menu-toggle:checked + .navbar a {
+    color: #fff;
+    font-size: 18px;
+    margin: 20px 0;
+    /* Add other styles as needed */
+}
+
+#menu-toggle:checked + #menu-icon + #close-icon {
+    display: block; /* Show the close icon when the menu is checked */
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    font-size: 25px;
+    z-index: 102; /* Ensure the close icon is above the menu icon */
+    color: #fff; /* Change the color of the close icon */
+}
+
+/* styles.css */
+#main-content {
+    background: #031540; /* Set the background color to dark blue */
+    color: #fff; /* Set text color to white or any preferred color */
+}
+
+
+/* ... Continue with your existing CSS code ... */
+
+
+
+
+/*----------css for small screens-----*/
+
+
+    /* Style the navigation links inside the menu */
+    .navbar.active a {
+        color: #fff;
+        font-size: 18px;
+        margin: 20px 0;
+        /* Add other styles as needed */
+    }
+
+    .navbar.active {
+        display: flex; /* Show the menu when the menu icon is clicked */
+    }
+
+    /* Add styles for hamburger menu icon */
+    #menu-icon {
+        display: block; /* Show the menu icon */
+        /* Add styles for the icon, e.g., three horizontal lines */
+    }
+
+    #close-icon {
+        display: none; /* Hide the close icon initially */
+    }
+
+
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 10px 5%;
+    }
+
+
+    .navbar {
+        display: none;
+    }
+
+    #menu-toggle:checked + .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(3, 21, 64, 0.9);
+        z-index: 100;
+    }
+
+    #menu-toggle:checked + .navbar a {
+        color: #fff;
+        font-size: 18px;
+        margin: 20px 0;
+    }
+
+    #menu-toggle:checked + #menu-icon + #close-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+        font-size: 25px;
+        z-index: 102;
+        color: #fff;
+    }
+
+    .home-image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+
+
