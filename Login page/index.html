@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login page</title>
+    <link rel="stylesheet" href="style.css">
+    <!---we had linked our css file----->
+</head>
+<body>
+    <div class="full-page">
+        <div class="navbar">
+            
+            <nav>
+                <ul id='MenuItems'>
+                    <li><a href='#'>Home</a></li>
+                    <li><a href='#'>About Us</a></li>
+                    <li><a href='#'>Services</a></li>
+                    <li><a href='#'>Contact</a></li>
+                    
+
+                    <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Login</button></li>
+                </ul>
+            </nav>
+        </div>
+        <div id='login-form'class='login-page'>
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button'onclick='login()'class='toggle-btn'>Login</button>
+                    <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+                </div>
+                <form id='login' class='input-group-login'  method="post" action="login.php">
+                    <input type='text' class='input-field'placeholder='Email Id' name="email" required >
+		            <input type='password' class='input-field'placeholder='Enter Password' name="password" required>
+		            <input type='checkbox' class='check-box'><span>Remember Password</span>
+		            <button type='submit'  class='submit-btn'>Login</button>
+		 </form>
+		 <form id='register' class='input-group-register'>
+		     <input type='text'class='input-field'placeholder='First Name' required>
+		     <input type='text'class='input-field'placeholder='Last Name ' required>
+		     <input type='email'class='input-field'placeholder='Email Id' required>
+		     <input type='password'class='input-field'placeholder='Enter Password' required>
+		     <input type='password'class='input-field'placeholder='Confirm Password'  required>
+		     <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>
+             <button type='submit'class='submit-btn'>Register</button>
+	         </form>
+            </div>
+        </div>
+        
+    </div>
+    <!-- Add the following code snippet here -->
+    <div id="password-saved-message" style="display: none;">Your password is saved.</div>
+
+    <!----Footer---->
+        <footer>
+            <div class="footer-content">
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about us">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href='login'>Login</a></li>
+                </ul>
+            </div>
+            <p>Copyright @2023 Ritika Srivastava. All Rights Reserved.</p>
+        </footer>
+
+
+    <script>
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('btn');
+
+        function register() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '110px';
+        }
+
+        function login() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '0px';
+
+            // Check if the "Remember Password" checkbox is checked
+            var rememberPasswordCheckbox = document.querySelector('.check-box');
+            if (rememberPasswordCheckbox.checked) {
+                var email = document.getElementById('login').elements['email'].value;
+                var password = document.getElementById('login').elements['password'].value;
+
+                // Store email and password (you can use cookies or local storage)
+                if (email && password) {
+                    // Here, you can save the user's choice (e.g., using cookies or local storage)
+                    // Display a message to indicate the password is saved
+                    document.getElementById('password-saved-message').style.display = 'block';
+
+                    // You can also hide the message after a few seconds
+                    setTimeout(function () {
+                        document.getElementById('password-saved-message').style.display = 'none';
+                    }, 5000); // Hide the message after 5 seconds (adjust as needed)
+                }
+            }
+        }
+    </script>
+</div>
+<script>
+    var x=document.getElementById('login');
+    var y=document.getElementById('register');
+    var z=document.getElementById('btn');
+
+    function register()
+    {
+        x.style.left='-400px';
+        y.style.left='50px';
+        z.style.left='110px';
+    }
+
+    function login()
+    {
+        x.style.left='50px';
+        y.style.left='450px';
+        z.style.left='0px';
+        
+    }
+
+    
+
+</script>
+    
+	<script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+        document.getElementById('login').addEventListener('submit', function(event) {
+            // Prevent the form from submitting normally
+            event.preventDefault();
+        
+            // Add your login logic here
+            var email = document.getElementById('login').elements['email'].value;
+            var password = document.getElementById('login').elements['password'].value;
+        
+            // Perform your login authentication here
+            if (email && password) {
+                // Fields are filled, you can submit the form
+                this.submit(); // Submit the form
+            } else {
+                // Fields are empty, you can display an error message
+                alert('Please fill out both email and password fields.');
+            }
+        });
+        
+        
+</script>
+</body>
+</html>
+
